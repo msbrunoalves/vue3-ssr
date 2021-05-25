@@ -1,6 +1,13 @@
 <template>
   <footer
-    class="flex items-center justify-center h-12 text-sm text-center border-t border-gray-200"
+    class="
+      flex
+      items-center
+      justify-center
+      h-12
+      text-sm text-center
+      border-t border-gray-200
+    "
   >
     <p>
       &copy; {{ currentYear }} &middot;

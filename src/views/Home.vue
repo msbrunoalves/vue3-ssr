@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1 class="mb-4 text-2xl font-semibold text-gray-900">
-      Vue 3 Server Side Rendering
+      Vue 3 Server Side Rendering - Hello world do Bruno Alves
     </h1>
     <app-counter />
   </div>
