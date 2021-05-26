@@ -1,5 +1,5 @@
 <template>
-  <header class="flex h-12 border-b border-gray-200 md:h-16">
+  <header class="navbar flex h-12 border-b border-gray-200 md:h-16">
     <div class="flex items-center w-full max-w-screen-xl px-5 mx-auto">
       <div>
         <router-link class="font-bold" to="/">Vue 3 SSR</router-link>
