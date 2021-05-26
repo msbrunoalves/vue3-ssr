@@ -11,6 +11,7 @@ import { defineComponent, computed } from "vue";
 import { useRoute } from "vue-router";
 import LayoutDefault from "./layouts/LayoutDefault.vue";
 import LayoutBlank from "./layouts/LayoutBlank.vue";
+import AmpOptimizer from "@ampproject/toolbox-optimizer";
 
 export default defineComponent({
   name: "App",
@@ -28,6 +29,18 @@ export default defineComponent({
       layout,
     };
   },
+});
+
+const ampOptimizer = AmpOptimizer.create();
+
+const originalHtml = `
+  <!doctype html>
+  <html ⚡>
+    ...
+  </html>`;
+
+ampOptimizer.transformHtml(originalHtml).then((optimizedHtml) => {
+  console.log(optimizedHtml);
 });
 </script>
 
