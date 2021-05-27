@@ -28,7 +28,9 @@
     "tailwindcss": "^1.4.6",
     "vue": "^3.0.0-beta.13",
     "vue-bundle-renderer": "^0.0.3",
-    "vue-router": "^4.0.0-alpha.11"
+    "vue-router": "^4.0.0-alpha.11",
+    "vuex": "^4.0.1",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
