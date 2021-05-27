@@ -15,13 +15,13 @@ export default {
       allLinks: [
         {
           id: "1",
-          description: "The Coolest GraphQL Backend 😎",
-          url: "https://www.graph.cool",
+          description: "Google 😎",
+          url: "https://www.google.pt",
         },
         {
           id: "2",
-          description: "The Best GraphQL Client",
-          url: "http://dev.apollodata.com/",
+          description: "Bing",
+          url: "http://www.bing.com/",
         },
       ],
     };
