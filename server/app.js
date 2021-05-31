@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const serveFavicon = require("serve-favicon");
 const compression = require("compression");
+const chalk = require("chalk");
 const vueServerRenderer = require("@vue/server-renderer");
 const { createBundleRenderer } = require("vue-bundle-renderer");
 const { render } = require("./utils/render");
@@ -53,3 +54,45 @@ function renderPage(req, res) {
 app.get("*", renderPage);
 
 module.exports = app;
+
+//MICRO API
+var app2 = express();
+var port = 3000;
+app2.listen(port, () => {
+  console.log(chalk.blueBright(`API Server started at http://localhost:${port}`));
+});
+//rotas
+app2.get("/continents", (req, res, next) => {
+  res.json({
+    "continents": [
+      {
+        "code": "AF",
+        "name": "Africa"
+      },
+      {
+        "code": "AN",
+        "name": "Antarctica"
+      },
+      {
+        "code": "AS",
+        "name": "Asia"
+      },
+      {
+        "code": "EU",
+        "name": "Europe"
+      },
+      {
+        "code": "NA",
+        "name": "North America"
+      },
+      {
+        "code": "OC",
+        "name": "Oceania"
+      },
+      {
+        "code": "SA",
+        "name": "South America"
+      }
+    ]
+  });
+});

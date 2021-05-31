@@ -10,27 +10,19 @@
     width="auto"
     height="100"
     layout="fixed-height"
-    src="https://playground.amp.dev/static/inline-examples/data/amp-list-urls.json"
+    src="http://localhost:3000/continents"
   >
     <template type="amp-mustache">
       <div class="url-entry">
-        <a href="{{url}}">{{ title }}</a>
+        <div>{{ code }} - {{ name }}</div>
       </div>
     </template>
   </amp-list>
-  <h3>Lista Vue de dados GraphQL</h3>
-  <div></div>
-  <ul id="example-1">
-    <li v-for="continent in allContinents" :key="continent.code">
-      {{ continent.code }} - {{ continent.name }}
-    </li>
-  </ul>
 </template>
 
 <script>
 //import ContinentItem from "./ContinentItem.vue";
 import LinkItem from "./LinkItem";
-const axios = require("axios");
 
 export default {
   name: "LinkList",
@@ -48,21 +40,6 @@ export default {
           url: "http://www.bing.com/",
         },
       ],
-      allContinents: axios({
-        url: "https://countries.trevorblades.com/",
-        method: "post",
-        data: {
-          query: `
-            {continents{
-              code
-              name
-            }}
-            `,
-        },
-      }).then((result) => {
-        console.log(this.allContinents);
-        return result.data.data.continents;
-      }),
     };
   },
   components: {
