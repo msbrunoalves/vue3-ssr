@@ -77,37 +77,22 @@ server.listen(port, () => {
   console.log(chalk.blueBright(`API Server started at http://localhost:${port}`));
 });
 //rotas
-app2.get("/continents", (req, res, next) => {
-  res.json({
-    "items": [
-      {
-        "code": "AF",
-        "name": "Africa"
-      },
-      {
-        "code": "AN",
-        "name": "Antarctica"
-      },
-      {
-        "code": "AS",
-        "name": "Asia"
-      },
-      {
-        "code": "EU",
-        "name": "Europe"
-      },
-      {
-        "code": "NA",
-        "name": "North America"
-      },
-      {
-        "code": "OC",
-        "name": "Oceania"
-      },
-      {
-        "code": "SA",
-        "name": "South America"
-      }
-    ]
-  });
+//Vai buscar os dados á BD GraphQL e devolve o JSON para a rota /continents
+const axios = require('axios');
+axios({
+  url: "https://countries.trevorblades.com/",
+  method: "post",
+  data: {
+    query: `
+        {continents{
+            code
+            name
+        }}
+        `,
+  },
+}).then((result) => {
+  //A variável itens serve para meter como pai dos objetos do json que recebe
+  app2.get("/continents", (req, res, next) => {
+    res.json({ "items": result.data.data.continents });
+  })
 });
