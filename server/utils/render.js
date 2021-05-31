@@ -1198,5 +1198,13 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   background-color: #101112 ;
 }
 /*# sourceMappingURL=bootstrap-amp.css.map */
+
+
+.alert{position:relative;padding:1rem 1rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}
+.alert-primary{color:#084298;background-color:#cfe2ff;border-color:#b6d4fe}
+.list-group{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;border-radius:.25rem}
+.list-group-item{position:relative;display:block;padding:.5rem 1rem;color:#212529;text-decoration:none;background-color:#fff;border:1px solid rgba(0,0,0,.125)}
+.list-group-item:first-child{border-top-left-radius:.25rem;border-top-right-radius:.25rem}
+.list-group-item:last-child{border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}
   </style>`
 }

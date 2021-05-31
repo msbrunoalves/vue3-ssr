@@ -10,14 +10,18 @@
     width="auto"
     height="100"
     layout="fixed-height"
-    src="http://localhost:3000/continents"
+    src="https://localhost:3000/continents"
   >
-    <template type="amp-mustache">
-      <div class="url-entry">
-        <div>{{ code }} - {{ name }}</div>
-      </div>
-    </template>
+    <ul class="list-group">
+      <template type="amp-mustache">
+        <li class="list-group-item">{{ code }} - {{ name }}</li>
+      </template>
+    </ul>
   </amp-list>
+  <span></span>
+  <div class="alert alert-primary" role="alert">
+    .\chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+  </div>
 </template>
 
 <script>

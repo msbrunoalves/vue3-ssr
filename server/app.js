@@ -57,14 +57,29 @@ module.exports = app;
 
 //MICRO API
 var app2 = express();
-var port = 3000;
-app2.listen(port, () => {
+const https = require('https');
+const fs = require('fs');
+const port = 3000;
+
+var key = fs.readFileSync(__dirname + '/certs/selfsigned.key');
+var cert = fs.readFileSync(__dirname + '/certs/selfsigned.crt');
+var options = {
+  key: key,
+  cert: cert
+};
+
+app2.get('/', (req, res) => {
+  res.send('Now using https..');
+});
+
+var server = https.createServer(options, app2);
+server.listen(port, () => {
   console.log(chalk.blueBright(`API Server started at http://localhost:${port}`));
 });
 //rotas
 app2.get("/continents", (req, res, next) => {
   res.json({
-    "continents": [
+    "items": [
       {
         "code": "AF",
         "name": "Africa"
