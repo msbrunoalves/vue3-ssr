@@ -9,7 +9,7 @@
     width="auto"
     height="100"
     layout="fixed-height"
-    src="http://localhost:8080/continents"
+    src="https://localhost:8443/continents"
   >
     <ul class="list-group">
       <template v-pre type="amp-mustache">
