@@ -39,6 +39,8 @@ const baseConfig = {
         options: {
           compilerOptions: {
             preserveWhitespace: false,
+            isCustomElement: (tag) => tag === "amp-list",
+            //isCustomElement: (tag) => tag === "/^amp-/", //não funca
           },
         },
       },

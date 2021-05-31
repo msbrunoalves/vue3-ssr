@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const serveFavicon = require("serve-favicon");
 const compression = require("compression");
-const chalk = require("chalk");
 const vueServerRenderer = require("@vue/server-renderer");
 const { createBundleRenderer } = require("vue-bundle-renderer");
 const { render } = require("./utils/render");
@@ -51,48 +50,26 @@ function renderPage(req, res) {
   }
 }
 
+const axios = require("axios");
+
+app.get("/continents", (req, res) => {
+  axios({
+    url: "https://countries.trevorblades.com/",
+    method: "post",
+    data: {
+      query: `
+          {continents{
+              code
+              name
+          }}
+          `,
+    },
+  }).then((result) => {
+    //A variável itens serve para meter como pai dos objetos do json que recebe
+    res.json({ items: result.data.data.continents });
+  });
+});
+
 app.get("*", renderPage);
 
 module.exports = app;
-
-//MICRO API
-var app2 = express();
-const https = require('https');
-const fs = require('fs');
-const port = 3000;
-
-var key = fs.readFileSync(__dirname + '/certs/selfsigned.key');
-var cert = fs.readFileSync(__dirname + '/certs/selfsigned.crt');
-var options = {
-  key: key,
-  cert: cert
-};
-
-app2.get('/', (req, res) => {
-  res.send('Now using https..');
-});
-
-var server = https.createServer(options, app2);
-server.listen(port, () => {
-  console.log(chalk.blueBright(`API Server started at http://localhost:${port}`));
-});
-//rotas
-//Vai buscar os dados á BD GraphQL e devolve o JSON para a rota /continents
-const axios = require('axios');
-axios({
-  url: "https://countries.trevorblades.com/",
-  method: "post",
-  data: {
-    query: `
-        {continents{
-            code
-            name
-        }}
-        `,
-  },
-}).then((result) => {
-  //A variável itens serve para meter como pai dos objetos do json que recebe
-  app2.get("/continents", (req, res, next) => {
-    res.json({ "items": result.data.data.continents });
-  })
-});

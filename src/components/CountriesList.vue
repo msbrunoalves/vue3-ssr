@@ -6,14 +6,13 @@
   </div>
   <h3>Lista AMP de source JSON</h3>
   <amp-list
-    v-pre
     width="auto"
     height="100"
     layout="fixed-height"
-    src="https://localhost:3000/continents"
+    src="http://localhost:8080/continents"
   >
     <ul class="list-group">
-      <template type="amp-mustache">
+      <template v-pre type="amp-mustache">
         <li class="list-group-item">{{ code }} - {{ name }}</li>
       </template>
     </ul>

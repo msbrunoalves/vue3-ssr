@@ -1206,5 +1206,5 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 .list-group-item{position:relative;display:block;padding:.5rem 1rem;color:#212529;text-decoration:none;background-color:#fff;border:1px solid rgba(0,0,0,.125)}
 .list-group-item:first-child{border-top-left-radius:.25rem;border-top-right-radius:.25rem}
 .list-group-item:last-child{border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}
-  </style>`
+  </style>`;
 }

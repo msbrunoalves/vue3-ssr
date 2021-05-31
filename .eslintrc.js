@@ -21,6 +21,6 @@ module.exports = {
 
   rules: {
     // Add your rules here
-    "no-console": "warn",
+    //"no-console": "warn",
   },
 };
