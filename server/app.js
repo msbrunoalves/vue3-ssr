@@ -25,6 +25,7 @@ if (isProd) {
     clientManifest,
     runInNewContext: false,
     vueServerRenderer,
+    inject: false,
   });
 } else {
   const devServer = require("../build/dev-server");
