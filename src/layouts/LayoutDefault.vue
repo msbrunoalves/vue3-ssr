@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <!--app-header /-->
+    <app-header />
 
     <div class="container">
       <slot />
@@ -12,14 +12,14 @@
 
 <script>
 import { defineComponent } from "vue";
-//import AppHeader from "./AppHeader.vue";
+import AppHeader from "./AppHeader.vue";
 //import AppFooter from "./AppFooter.vue";
 
 export default defineComponent({
   name: "LayoutDefault",
 
   components: {
-    //AppHeader,
+    AppHeader,
     //AppFooter,
   },
 });

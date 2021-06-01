@@ -4,19 +4,6 @@
     <link-item v-for="link in allLinks" :key="link.id" :link="link">
     </link-item>
   </div>
-  <h3>Lista AMP de source JSON</h3>
-  <amp-list
-    width="auto"
-    height="100"
-    layout="fixed-height"
-    src="https://localhost:8443/continents"
-  >
-    <ul class="list-group">
-      <template v-pre type="amp-mustache">
-        <li class="list-group-item">{{ code }} - {{ name }}</li>
-      </template>
-    </ul>
-  </amp-list>
 </template>
 
 <script>
@@ -42,7 +29,7 @@ export default {
     };
   },
   created() {
-    this.$ssrContext.isAMP = true;
+    this.$ssrContext.isAMP = false;
   },
   components: {
     LinkItem,

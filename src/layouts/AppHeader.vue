@@ -25,6 +25,7 @@ export default defineComponent({
   setup() {
     const navLinks = [
       { to: "/", label: "Home" },
+      { to: { name: "Home2" }, label: "Home2" },
       { to: { name: "About" }, label: "About" },
       { to: { name: "BlankPage" }, label: "Blank Layout" },
     ];
