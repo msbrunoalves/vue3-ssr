@@ -10,7 +10,6 @@ async function render(bundleRenderer, context, req, res) {
 
   try {
     const content = await bundleRenderer.renderToString(context);
-
     const html = `
 <!DOCTYPE html>
 <html ⚡>
