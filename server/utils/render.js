@@ -52,13 +52,13 @@ function getRenderScripts(renderScripts) {
 function getAMPscripts(content) {
   var finalScriptString = `<script async src="https://cdn.ampproject.org/v0.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>`;
+  `;
 
   if (content.search("amp-list") != -1) {
-    finalScriptString += `<script custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js" async=""></script>`;
+    finalScriptString += `<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>`;
   }
   if (content.search("amp-mustache") != -1) {
-    finalScriptString += `<script async src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" crossorigin="anonymous" custom-template="amp-mustache"></script>`;
+    finalScriptString += `<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>`;
   }
 
   return finalScriptString;
